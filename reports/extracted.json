@@ -1,0 +1,210 @@
+[
+  {
+    "vendor": "Gulf Coast Office Supply",
+    "invoice_number": "GCO-10482",
+    "invoice_date": "2026-09-02",
+    "due_date": "2026-10-02",
+    "line_items": [
+      {
+        "description": "Copy paper, case",
+        "quantity": 4.0,
+        "unit_price": 42.5,
+        "amount": 170.0
+      },
+      {
+        "description": "Toner cartridge",
+        "quantity": 2.0,
+        "unit_price": 89.99,
+        "amount": 179.98
+      }
+    ],
+    "total": 349.98,
+    "notes": "",
+    "gl_category": "6100 Office Supplies",
+    "confidence": 0.9,
+    "source_file": "inv_001_gulfcoast_office.pdf",
+    "flags": [],
+    "status": "READY_TO_POST"
+  },
+  {
+    "vendor": "Suncoast Print & Design",
+    "invoice_number": "SPD-2231",
+    "invoice_date": "2026-09-05",
+    "due_date": "2026-09-30",
+    "line_items": [
+      {
+        "description": "Event flyers (500)",
+        "quantity": 1.0,
+        "unit_price": 185.0,
+        "amount": 185.0
+      },
+      {
+        "description": "Banner 3x6",
+        "quantity": 1.0,
+        "unit_price": 120.0,
+        "amount": 120.0
+      }
+    ],
+    "total": 305.0,
+    "notes": "",
+    "gl_category": "6200 Printing & Marketing",
+    "confidence": 0.9,
+    "source_file": "inv_002_suncoast_print.pdf",
+    "flags": [],
+    "status": "READY_TO_POST"
+  },
+  {
+    "vendor": "Peace River IT Services",
+    "invoice_number": "PRIT-0917",
+    "invoice_date": "2026-09-08",
+    "due_date": "2026-10-08",
+    "line_items": [
+      {
+        "description": "Managed IT support - Sept",
+        "quantity": 1.0,
+        "unit_price": 650.0,
+        "amount": 650.0
+      },
+      {
+        "description": "Laptop setup",
+        "quantity": 3.0,
+        "unit_price": 75.0,
+        "amount": 225.0
+      }
+    ],
+    "total": 875.0,
+    "notes": "",
+    "gl_category": "6300 IT & Technology",
+    "confidence": 0.9,
+    "source_file": "inv_003_peace_river_it.pdf",
+    "flags": [],
+    "status": "READY_TO_POST"
+  },
+  {
+    "vendor": "Gulf Coast Office Supply",
+    "invoice_number": "GCO-10482",
+    "invoice_date": "2026-09-02",
+    "due_date": "2026-10-02",
+    "line_items": [
+      {
+        "description": "Copy paper, case",
+        "quantity": 4.0,
+        "unit_price": 42.5,
+        "amount": 170.0
+      },
+      {
+        "description": "Toner cartridge",
+        "quantity": 2.0,
+        "unit_price": 89.99,
+        "amount": 179.98
+      }
+    ],
+    "total": 349.98,
+    "notes": "",
+    "gl_category": "6100 Office Supplies",
+    "confidence": 0.9,
+    "source_file": "inv_004_gulfcoast_office_dup.pdf",
+    "flags": [
+      "Possible duplicate of inv_001_gulfcoast_office.pdf"
+    ],
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "vendor": "Harbor Catering Co.",
+    "invoice_number": null,
+    "invoice_date": "2026-09-12",
+    "due_date": "2026-09-26",
+    "line_items": [
+      {
+        "description": "Volunteer luncheon, 40 guests",
+        "quantity": 40.0,
+        "unit_price": 14.75,
+        "amount": 590.0
+      }
+    ],
+    "total": 590.0,
+    "notes": "",
+    "gl_category": "6400 Events & Catering",
+    "confidence": 0.9,
+    "source_file": "inv_005_harbor_catering.pdf",
+    "flags": [
+      "Missing required field(s): invoice_number"
+    ],
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "vendor": "Myakka Audio Visual",
+    "invoice_number": "MAV-5520",
+    "invoice_date": "2026-09-15",
+    "due_date": "2026-10-15",
+    "line_items": [
+      {
+        "description": "Projector rental, 2 days",
+        "quantity": 1.0,
+        "unit_price": 400.0,
+        "amount": 400.0
+      },
+      {
+        "description": "Sound system + tech",
+        "quantity": 1.0,
+        "unit_price": 4850.0,
+        "amount": 4850.0
+      }
+    ],
+    "total": 5250.0,
+    "notes": "",
+    "gl_category": "6400 Events & Catering",
+    "confidence": 0.9,
+    "source_file": "inv_006_myakka_av.pdf",
+    "flags": [
+      "Over $2,500 approval threshold - needs manager sign-off"
+    ],
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "vendor": "Tidewater Cleaning",
+    "invoice_number": "TWC-311",
+    "invoice_date": "2026-09-18",
+    "due_date": "2026-10-18",
+    "line_items": [
+      {
+        "description": "Office cleaning, 4 visits",
+        "quantity": 4.0,
+        "unit_price": 95.0,
+        "amount": 380.0
+      }
+    ],
+    "total": 420.0,
+    "notes": "",
+    "gl_category": "6500 Facilities",
+    "confidence": 0.9,
+    "source_file": "inv_007_tidewater_cleaning.pdf",
+    "flags": [
+      "Total $420.00 does not match line items $380.00"
+    ],
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "vendor": "QuickLogo Merch LLC",
+    "invoice_number": "QL-88",
+    "invoice_date": "2026-09-20",
+    "due_date": "2026-10-05",
+    "line_items": [
+      {
+        "description": "Branded t-shirts",
+        "quantity": 60.0,
+        "unit_price": 11.25,
+        "amount": 675.0
+      }
+    ],
+    "total": 675.0,
+    "notes": "",
+    "gl_category": "6200 Printing & Marketing",
+    "confidence": 0.9,
+    "source_file": "inv_008_quick_logo_llc.pdf",
+    "flags": [
+      "Vendor not on approved list - verify W-9 and set up vendor before paying"
+    ],
+    "status": "NEEDS_REVIEW"
+  }
+]

@@ -1,0 +1,4 @@
+anthropic>=0.40
+pypdf>=4.0
+pyyaml>=6.0
+reportlab>=4.0

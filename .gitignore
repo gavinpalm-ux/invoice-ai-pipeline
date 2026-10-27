@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+# Real invoices never go in a public repo; only the fictional samples do.
+invoices/private/

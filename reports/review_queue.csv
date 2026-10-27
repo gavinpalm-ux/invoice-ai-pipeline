@@ -1,0 +1,6 @@
+source_file,vendor,invoice_number,invoice_date,due_date,total,gl_category,confidence,status,flags
+inv_004_gulfcoast_office_dup.pdf,Gulf Coast Office Supply,GCO-10482,2026-09-02,2026-10-02,349.98,6100 Office Supplies,0.9,NEEDS_REVIEW,Possible duplicate of inv_001_gulfcoast_office.pdf
+inv_005_harbor_catering.pdf,Harbor Catering Co.,,2026-09-12,2026-09-26,590.0,6400 Events & Catering,0.9,NEEDS_REVIEW,Missing required field(s): invoice_number
+inv_006_myakka_av.pdf,Myakka Audio Visual,MAV-5520,2026-09-15,2026-10-15,5250.0,6400 Events & Catering,0.9,NEEDS_REVIEW,"Over $2,500 approval threshold - needs manager sign-off"
+inv_007_tidewater_cleaning.pdf,Tidewater Cleaning,TWC-311,2026-09-18,2026-10-18,420.0,6500 Facilities,0.9,NEEDS_REVIEW,Total $420.00 does not match line items $380.00
+inv_008_quick_logo_llc.pdf,QuickLogo Merch LLC,QL-88,2026-09-20,2026-10-05,675.0,6200 Printing & Marketing,0.9,NEEDS_REVIEW,Vendor not on approved list - verify W-9 and set up vendor before paying

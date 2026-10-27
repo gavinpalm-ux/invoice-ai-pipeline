@@ -1,0 +1,43 @@
+# Business rules live here, not in code, so a finance lead can change them
+# without a developer. Every rule below maps to a flag in the review queue.
+
+model: claude-sonnet-5-5          # Claude model used for extraction
+max_tokens: 2000
+
+# Any invoice at or above this amount needs a human approver, even if clean.
+approval_threshold: 2500.00
+
+# Extractions below this confidence go to the review queue.
+min_confidence: 0.85
+
+# Allowed tolerance when checking line items against the stated total.
+total_tolerance: 0.01
+
+# Vendors already set up in the accounting system.
+approved_vendors:
+  - Gulf Coast Office Supply
+  - Suncoast Print & Design
+  - Peace River IT Services
+  - Harbor Catering Co.
+  - Myakka Audio Visual
+  - Tidewater Cleaning
+
+# Chart-of-accounts mapping. Claude picks one; the offline extractor uses keywords.
+gl_categories:
+  "6100 Office Supplies":      [paper, toner, pens, supplies, folders]
+  "6200 Printing & Marketing": [flyer, banner, print, brochure, t-shirt, merch, branded]
+  "6300 IT & Technology":      [it support, laptop, software, managed it, network]
+  "6400 Events & Catering":    [catering, luncheon, projector, sound system, event, rental]
+  "6500 Facilities":           [cleaning, janitorial, repair, maintenance]
+  "6900 Other / Uncategorized": []
+
+required_fields: [vendor, invoice_number, invoice_date, due_date, total]
+
+# Assumptions for the time-savings estimate in the summary report.
+# Replace with numbers timed in your own office before quoting them.
+roi:
+  manual_minutes_per_invoice: 6     # open, key in, categorize, check
+  review_minutes_flagged: 3         # human review of a flagged invoice
+  review_minutes_clean: 0.5         # spot-check of a clean invoice
+  monthly_invoice_volume: 150
+  loaded_hourly_cost: 30.00

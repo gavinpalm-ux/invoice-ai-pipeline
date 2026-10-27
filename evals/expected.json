@@ -1,0 +1,15 @@
+{
+  "_about": "Ground truth for every test invoice: the fields a person would key in, the correct GL category, and whether the invoice should reach a human. Hand-checked against the PDFs.",
+  "cases": {
+    "inv_001_gulfcoast_office.pdf":    {"vendor": "Gulf Coast Office Supply", "invoice_number": "GCO-10482", "invoice_date": "2026-09-02", "due_date": "2026-10-02", "total": 349.98, "gl_category": "6100 Office Supplies", "status": "READY_TO_POST"},
+    "inv_002_suncoast_print.pdf":      {"vendor": "Suncoast Print & Design", "invoice_number": "SPD-2231", "invoice_date": "2026-09-05", "due_date": "2026-09-30", "total": 305.00, "gl_category": "6200 Printing & Marketing", "status": "READY_TO_POST"},
+    "inv_003_peace_river_it.pdf":      {"vendor": "Peace River IT Services", "invoice_number": "PRIT-0917", "invoice_date": "2026-09-08", "due_date": "2026-10-08", "total": 875.00, "gl_category": "6300 IT & Technology", "status": "READY_TO_POST"},
+    "inv_004_gulfcoast_office_dup.pdf":{"vendor": "Gulf Coast Office Supply", "invoice_number": "GCO-10482", "invoice_date": "2026-09-02", "due_date": "2026-10-02", "total": 349.98, "gl_category": "6100 Office Supplies", "status": "NEEDS_REVIEW", "reason": "duplicate"},
+    "inv_005_harbor_catering.pdf":     {"vendor": "Harbor Catering Co.", "invoice_number": null, "invoice_date": "2026-09-12", "due_date": "2026-09-26", "total": 590.00, "gl_category": "6400 Events & Catering", "status": "NEEDS_REVIEW", "reason": "missing invoice number"},
+    "inv_006_myakka_av.pdf":           {"vendor": "Myakka Audio Visual", "invoice_number": "MAV-5520", "invoice_date": "2026-09-15", "due_date": "2026-10-15", "total": 5250.00, "gl_category": "6400 Events & Catering", "status": "NEEDS_REVIEW", "reason": "over threshold"},
+    "inv_007_tidewater_cleaning.pdf":  {"vendor": "Tidewater Cleaning", "invoice_number": "TWC-311", "invoice_date": "2026-09-18", "due_date": "2026-10-18", "total": 420.00, "gl_category": "6500 Facilities", "status": "NEEDS_REVIEW", "reason": "total mismatch"},
+    "inv_008_quick_logo_llc.pdf":      {"vendor": "QuickLogo Merch LLC", "invoice_number": "QL-88", "invoice_date": "2026-09-20", "due_date": "2026-10-05", "total": 675.00, "gl_category": "6200 Printing & Marketing", "status": "NEEDS_REVIEW", "reason": "unapproved vendor"},
+    "hard_01_alt_layout.pdf":          {"vendor": "Venice Grounds Landscaping", "invoice_number": "VGL/2026/044", "invoice_date": "2026-09-22", "due_date": "2026-10-22", "total": 339.50, "gl_category": "6500 Facilities", "status": "NEEDS_REVIEW", "reason": "unapproved vendor"},
+    "hard_02_alt_layout.pdf":          {"vendor": "Englewood Signworks", "invoice_number": "ES-7781", "invoice_date": "2026-10-01", "due_date": "2026-10-15", "total": 210.00, "gl_category": "6200 Printing & Marketing", "status": "NEEDS_REVIEW", "reason": "unapproved vendor"}
+  }
+}

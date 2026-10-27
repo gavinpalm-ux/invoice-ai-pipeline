@@ -1,0 +1,69 @@
+name: Process invoices
+
+# Runs whenever invoices are added or the rules/code change, and on demand.
+on:
+  push:
+    branches: [main]
+    paths: ["invoices/inbox/**", "config.yaml", "src/**", "evals/**"]
+  pull_request:
+    paths: ["config.yaml", "src/**", "evals/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  evals:
+    name: Quality gate (evals)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+
+      - name: Baseline eval (rule-based, no API)
+        run: python evals/run_evals.py --mode offline
+
+      - name: Claude eval
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python evals/run_evals.py --mode claude   # fails the build on any unsafe pass
+
+      - name: Publish eval results to run summary
+        if: always()
+        run: cat evals/results_*.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: eval-results, path: "evals/results_*.md" }
+
+  process:
+    name: Extract, validate, report
+    needs: evals            # nothing gets processed if the quality gate fails
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        run: python src/pipeline.py --mode auto
+
+      - name: Publish summary
+        run: cat reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with: { name: invoice-reports, path: reports/ }
+
+      - name: Commit reports back to the repo
+        run: |
+          git config user.name  "invoice-bot"
+          git config user.email "invoice-bot@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "Invoice run: $(date -u +%Y-%m-%d) [skip ci]"
+          git push

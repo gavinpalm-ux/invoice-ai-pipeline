@@ -1,0 +1,4 @@
+source_file,vendor,invoice_number,invoice_date,due_date,total,gl_category,confidence,status,flags
+inv_001_gulfcoast_office.pdf,Gulf Coast Office Supply,GCO-10482,2026-09-02,2026-10-02,349.98,6100 Office Supplies,0.9,READY_TO_POST,
+inv_002_suncoast_print.pdf,Suncoast Print & Design,SPD-2231,2026-09-05,2026-09-30,305.0,6200 Printing & Marketing,0.9,READY_TO_POST,
+inv_003_peace_river_it.pdf,Peace River IT Services,PRIT-0917,2026-09-08,2026-10-08,875.0,6300 IT & Technology,0.9,READY_TO_POST,
